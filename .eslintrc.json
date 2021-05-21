@@ -1,0 +1,52 @@
+{
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "settings": {
+    "react": {
+      "version": "detact"
+    }
+  },
+  // "plugins": ["react", "prettier"] // 기본
+  "plugins": ["simple-import-sort"], // 고급
+  "extends": [
+    "eslint:recommended", // 고급
+    "plugin:jsx-a11y/recommended", // 고급
+    "plugin:react/recommended", // 고급
+    "plugin:prettier/recommended", // 고급
+    "plugin:sonarjs/recommended", // 고급
+    "plugin:unicorn/recommended", // 고급
+    "plugin:security/recommended", // 고급
+    "plugin:react-hooks/recommended" // 고급
+    // "plugin:react/recommended", // 기본
+    // "airbnb", // 기본
+    // "prettier", // 기본
+    // "prettier/react" // 기본
+  ],
+  "rules": {
+    "strict": 0,
+    "no-console": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "simple-import-sort/imports": "error",
+    "unicorn/prefer-module": "off",
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "kebabCase": true
+        }
+      }
+    ]
+  }
+}

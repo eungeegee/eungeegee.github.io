@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 기초 셋팅
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [x] 절대경로 설정 : `jsconfig.json`
+- [ ] 프로젝트 구조 설정
+  ```js
+  pages - about - resume - blog - index.js - detail.js
+  public - assets
+  src - components - containers - layout
+  styles
+  context
+  hooks
+  posts
+  lib
+  api
+  ```
+- [x] esling + prettier + husky 설정
+  - [go! 참고 블로그](https://xenox.dev/setting-up-eslint-and-prettier-for-next-js-project/)
+  - [참고 깃허브: 프로버전](https://github.com/sarthology/next-js-eslint-pro)
+  - [참고 깃허브: 기본버전](https://github.com/sarthology/next-js-eslint-basic)
+  - 패키지 + 플러그인 설치
+    - 기본 :
+      ```bash
+      npm i -D eslint-plugin-prettier eslint-plugin-react eslint-config-airbnb eslint-config-prettier
+      ```
+    - 고급
+      ```bash
+      npm i -D eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-security eslint-plugin-simple-import-sort eslint-plugin-sonarjs eslint-plugin-unicorn
+      ```
+      - `simple-import-sort/sort`는 `simple-import-sort/imports`,`.../exports` 로 이름이 변경되었다
+  - prettier, eslint, husky 설정
+    ```
+    npm i -D husky lint-staged
+    ```
+- [x] 레이아웃 추가
+- [x] style 설정
+  - [x] tailwindcss
+    - [x] config 추가
+    - [x] globals.css 에 tailwind 적용
+    - [x] `_app.js` 에 tailwind 글로벌 style 적용

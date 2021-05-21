@@ -1,15 +1,53 @@
 {
-  "name": "eungee.log",
+  "name": "eungee-log",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prepare": "husky install",
+    "lint": "eslint '*/**/*.{js,jsx}' --quiet --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*/**/*.{js,jsx}": [
+      "eslint --fix -f git-log",
+      "prettier --write",
+      "git add"
+    ],
+    "*/**/*.{js,jsx}/": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*/**/*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
     "next": "10.2.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-sonarjs": "^0.7.0",
+    "eslint-plugin-unicorn": "^32.0.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "postcss": "^8.2.15",
+    "prettier": "^2.3.0",
+    "tailwindcss": "^2.1.2"
   }
 }
